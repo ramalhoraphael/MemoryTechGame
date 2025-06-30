@@ -6,7 +6,7 @@ Olá! Precisando passar um tempo, distrair a cabeça usando itens de tecnologia 
 
 ## Objetivo
 
-O Memory Tech Game tem o intuito de proporcionar uma descontração rápida através de um jogo de memoria com fases curtas e que usa imagens de tecnologia para customização.
+O Memory Tech Game tem o intuito de proporcionar uma descontração rápida através de um jogo de memória que usa emojis de tecnologia para customização.
 
 ## Motivação
 
@@ -15,7 +15,9 @@ Esse é meu primeiro projeto pessoal e quero através dele chegar próximo de um
 a.Versionamento de código - git/github
 b.Documentação README e auxiliares .md
 c.Componentização
-d.Refatoração
+d.Testes
+f.Sprints de scrum para organização e entregas
+e.Refatoração
 
 ## Areas Futuras nesse Readme
 
@@ -24,3 +26,4 @@ Screenshots do game
 Funcionalidade
 Proximos passos
 Como rodar o projeto localmente
+Melhorias

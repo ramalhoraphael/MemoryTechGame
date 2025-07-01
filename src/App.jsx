@@ -6,7 +6,6 @@ function App() {
 
   const alternarVirada = () => {
     setVirada(!virada);
-    console.info("era pra virar");
   };
   return (
     <div

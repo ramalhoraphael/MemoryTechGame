@@ -12,18 +12,18 @@ O Memory Tech Game tem o intuito de proporcionar uma descontração rápida atra
 
 Esse é meu primeiro projeto pessoal e quero através dele chegar próximo de uma rotina de trabalho coorporativo através de uso de:
 
-a.Versionamento de código - git/github
-b.Documentação README e auxiliares .md
-c.Componentização
-d.Testes
-f.Sprints de scrum para organização e entregas
-e.Refatoração
+a. Versionamento de código - git/github <br>
+b. Documentação README e auxiliares .md <br>
+c. Componentização <br>
+d. Testes <br>
+f. Sprints de scrum para organização e entregas <br>
+e. Refatoração
 
-## Areas Futuras nesse Readme
+## Áreas Futuras nesse Readme
 
-Tecnologias Utilizadas
-Screenshots do game
-Funcionalidade
-Proximos passos
-Como rodar o projeto localmente
-Melhorias
+Tecnologias Utilizadas <br>
+Screenshots do game <br>
+Funcionalidade <br>
+Proximos passos <br>
+Como rodar o projeto localmente <br>
+Melhorias <br>

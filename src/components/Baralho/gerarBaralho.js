@@ -2,8 +2,8 @@ import { nanoid } from "nanoid";
 
 import emojisDisponiveis from "./emojis.json" assert { type: "json" };
 
-export default function gerarBaralho(quantidadeCartas) {
-  if (quantidadeCartas % 2 !== 0 && quantidadeCartas < 4) {
+export function gerarBaralho(quantidadeCartas) {
+  if (quantidadeCartas % 2 !== 0 || quantidadeCartas < 4) {
     throw new Error(
       "A quantidade de cartas deve ser um numero par maior ou igual a 4"
     );

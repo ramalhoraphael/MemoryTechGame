@@ -1,32 +1,95 @@
-import { describe, expect, it, beforeEach } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
-import Baralho from ".";
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import Baralho from "./index";
 
-beforeEach(() => {
-  cleanup(); // Garante que o DOM está limpo entre os testes
-});
+vi.mock("../Carta", () => ({
+  default: ({ naipe, virada, aoClicar }) => (
+    <div
+      data-testid="carta"
+      data-naipe={naipe}
+      data-virada={virada}
+      onClick={aoClicar}
+    >
+      {virada ? naipe : "❔"}
+    </div>
+  ),
+}));
 
 describe("Componente Baralho", () => {
-  it("renderiza a quantidade correta das cartas", () => {
-    const cartasMock = [
-      { id: "1", naipe: "💻", virada: false },
-      { id: "2", naipe: "💻", virada: false },
-      { id: "3", naipe: "🚀", virada: false },
-      { id: "4", naipe: "🚀", virada: false },
-    ];
-    render(<Baralho cartas={cartasMock} />);
-    const cartasRenderizadas = screen.getAllByText("❔");
-    expect(cartasRenderizadas).toHaveLength(cartasMock.length);
+  const quantidadeCartas = 20;
+  let viradaMock, aoClicarMock;
+
+  beforeEach(() => {
+    viradaMock = {};
+    aoClicarMock = vi.fn();
   });
 
-  it("mostra ❔ quando a carta está virada para baixo", () => {
-    render(<Baralho cartas={[{ id: "1", naipe: "🪝", virada: false }]} />);
-    const cartas = screen.getAllByText("❔");
-    expect(cartas).toHaveLength(1);
+  it("renderiza a quantidade correta de cartas", () => {
+    render(
+      <Baralho
+        quantidadeCartas={quantidadeCartas}
+        reset={0}
+        virada={viradaMock}
+        aoClicar={aoClicarMock}
+      />
+    );
+    const cartas = screen.getAllByTestId("carta");
+    expect(cartas).toHaveLength(quantidadeCartas);
   });
 
-  it("mostra o emoji correto quando a carta está virada para cima", () => {
-    render(<Baralho cartas={[{ id: "1", naipe: "🪝", virada: true }]} />);
-    expect(screen.getByText("🪝")).toBeInTheDocument();
+  it("transmite os dados corretos para cada carta", () => {
+    viradaMock = { a: true, b: false, c: true };
+    render(
+      <Baralho
+        quantidadeCartas={quantidadeCartas}
+        reset={0}
+        virada={viradaMock}
+        aoClicar={aoClicarMock}
+      />
+    );
+    const cartas = screen.getAllByTestId("carta");
+    expect(cartas.length).toBe(quantidadeCartas);
+  });
+
+  it("aciona aoClicar corretamente ao clicar em uma carta", () => {
+    render(
+      <Baralho
+        quantidadeCartas={quantidadeCartas}
+        reset={0}
+        virada={viradaMock}
+        aoClicar={aoClicarMock}
+      />
+    );
+    const cartas = screen.getAllByTestId("carta");
+    fireEvent.click(cartas[0]);
+    expect(aoClicarMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("recria o baralho quando o reset muda", () => {
+    const { rerender } = render(
+      <Baralho
+        quantidadeCartas={quantidadeCartas}
+        reset={0}
+        virada={viradaMock}
+        aoClicar={aoClicarMock}
+      />
+    );
+    const primeirasIds = screen
+      .getAllByTestId("carta")
+      .map((el) => el.getAttribute("data-naipe"));
+
+    rerender(
+      <Baralho
+        quantidadeCartas={quantidadeCartas}
+        reset={1}
+        virada={viradaMock}
+        aoClicar={aoClicarMock}
+      />
+    );
+    const novasIds = screen
+      .getAllByTestId("carta")
+      .map((el) => el.getAttribute("data-naipe"));
+
+    expect(primeirasIds).toEqual(novasIds);
   });
 });

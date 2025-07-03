@@ -7,7 +7,7 @@ describe("Função gerarBaralho", () => {
     expect(baralho).toHaveLength(20);
   });
 
-  it("cada emoji aparece exatamente duas vezes", () => {
+  it("cada naipe aparece exatamente duas vezes", () => {
     const baralho = gerarBaralho(20);
     const contagem = {};
     baralho.forEach((carta) => {
@@ -24,18 +24,21 @@ describe("Função gerarBaralho", () => {
       expect(carta).toHaveProperty("id");
       expect(carta).toHaveProperty("naipe");
       expect(carta).toHaveProperty("virada");
+      expect(typeof carta.id).toBe("string");
+      expect(typeof carta.naipe).toBe("string");
+      expect(carta.virada).toBe(false);
     });
   });
 
-  it("lança erro para quantidade inválida (ímpar ou menor que 4)", () => {
-    expect(() => gerarBaralho(3)).toThrow();
-    expect(() => gerarBaralho(5)).toThrow();
+  it("lança erro se a quantidade de cartas for ímpar", () => {
+    expect(() => gerarBaralho(5)).toThrow(
+      "A quantidade de cartas deve ser um numero par"
+    );
   });
 
-  it("embaralha as cartas (ordem diferente entre execuções)", () => {
+  it("não embaralha as cartas (ordem previsível)", () => {
     const primeira = gerarBaralho(20).map((c) => c.naipe);
     const segunda = gerarBaralho(20).map((c) => c.naipe);
-    const diferentes = primeira.some((emoji, i) => emoji !== segunda[i]);
-    expect(diferentes).toBe(true);
+    expect(primeira).toEqual(segunda);
   });
 });

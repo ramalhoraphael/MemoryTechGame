@@ -17,4 +17,14 @@ describe("Componente Carta", () => {
     screen.getByText("💻").click(); //simula click na carta
     expect(funcaoMocada).toHaveBeenCalled();
   });
+  it("deve ter a classe 'virada'se virada for true", () => {
+    render(<Carta emoji="💻" virada={true} aoClicar={() => {}} />);
+    const elemento = screen.getByTestId("carta-rotativa");
+    expect(elemento.classList.contains("virada")).toBe(true);
+  });
+  it("não deve ter a classe 'virada' se virada for false", () => {
+    render(<Carta emoji="💻" virada={false} aoClicar={() => {}} />);
+    const elemento = screen.getByTestId("carta-rotativa");
+    expect(elemento.classList.contains("virada")).toBe(false);
+  });
 });

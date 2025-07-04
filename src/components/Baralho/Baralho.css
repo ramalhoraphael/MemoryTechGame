@@ -1,9 +1,0 @@
-.baralho {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-}
-.carta {
-  font-size: 3rem; /* ou 48px, algo bem grande para emoji */
-  text-align: center;
-}

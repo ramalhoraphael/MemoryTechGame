@@ -31,7 +31,7 @@ export default function Mesa() {
       setBloqueado(false);
     }, 1500);
   }
-  function restarJogada() {
+  function limparJogada() {
     setIdPrimeiraCarta(null);
     setNaipeDaJogada("");
 
@@ -74,13 +74,13 @@ export default function Mesa() {
           {
             setNaipesCombinados((prev) => [...prev, naipeDaJogada]);
           }
-          restarJogada();
+          limparJogada();
 
           //Não combina?
         } else {
           console.log("❌ Não é par!");
           encobrirCartas(idDaCartaClicada); //idPrimeiraCarta esta no state
-          restarJogada();
+          limparJogada();
           setTentativas((prev) => prev + 1);
 
           return;

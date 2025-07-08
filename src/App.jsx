@@ -1,19 +1,6 @@
-import { useState } from "react";
-import Carta from "./components/Carta";
+import { StrictMode } from "react";
+import Mesa from "./components/Mesa/index.jsx";
 
-function App() {
-  const [virada, setVirada] = useState(false);
-
-  const alternarVirada = () => {
-    setVirada(!virada);
-  };
-  return (
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}
-      className="carta-app"
-    >
-      <Carta emoji="💻" virada={virada} aoClicar={alternarVirada} />
-    </div>
-  );
+export default function App() {
+  return <Mesa />;
 }
-export default App;

@@ -9,4 +9,8 @@ export default defineConfig({
     globals: true,
     setupFiles: "./vitest.setup.js",
   },
+  server: {
+    host: "0.0.0.0", // **Adicione esta linha**
+    port: 5173, // Opcional: Especifique a porta, se não, usará a padrão (5173)
+  },
 });

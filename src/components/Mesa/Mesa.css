@@ -188,12 +188,3 @@
     grid-template-columns: repeat(7, 9.9rem);
   }
 }
-@media screen and (min-width: 1229px) and (orientation: landscape) {
-  .carta-grid {
-    grid-template-rows: repeat(4, 10rem);
-    grid-template-columns: repeat(7, 12.7rem);
-    column-gap: 1.3rem;
-    row-gap: 0rem;
-    margin: 0.2rem;
-  }
-}

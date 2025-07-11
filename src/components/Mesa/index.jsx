@@ -6,7 +6,7 @@ import gerarBaralho from "./gerarBaralho.js";
 export default function Mesa() {
   //Estados
   const [baralho, setBaralho] = useState(gerarBaralho);
-  const [tentativas, setTentativas] = useState(0);
+  // const [tentativas, setTentativas] = useState(0);
   const [idPrimeiraCarta, setIdPrimeiraCarta] = useState(null);
   const [naipeDaJogada, setNaipeDaJogada] = useState("");
   const [naipesCombinados, setNaipesCombinados] = useState([]);
@@ -25,6 +25,7 @@ export default function Mesa() {
   }
   function encobrirCartas(id1) {
     setBloqueado(true);
+    // setTentativas((prev) => prev + 1);
     setTimeout(() => {
       virarCarta(id1);
       virarCarta(idPrimeiraCarta);
@@ -34,8 +35,14 @@ export default function Mesa() {
   function limparJogada() {
     setIdPrimeiraCarta(null);
     setNaipeDaJogada("");
-
     return;
+  }
+  function resetar() {
+    setBaralho(gerarBaralho());
+    // setTentativas(0);
+    setIdPrimeiraCarta(null);
+    setNaipeDaJogada("");
+    setNaipesCombinados([]);
   }
 
   //Principal
@@ -70,18 +77,14 @@ export default function Mesa() {
       {
         //Combina?
         if (naipeDaJogada === naipeDaCartaClicada) {
-          console.log("🎉 Par encontrado!");
           {
             setNaipesCombinados((prev) => [...prev, naipeDaJogada]);
           }
           limparJogada();
-
           //Não combina?
         } else {
-          console.log("❌ Não é par!");
           encobrirCartas(idDaCartaClicada); //idPrimeiraCarta esta no state
           limparJogada();
-          setTentativas((prev) => prev + 1);
 
           return;
         }
@@ -91,9 +94,13 @@ export default function Mesa() {
 
   return (
     <div className="mesa">
-      <div>Tentativas {tentativas}</div>
-      <div>ID 1ª Carta {idPrimeiraCarta}</div>
-      <div>Naipe da Jogada {naipeDaJogada}</div>
+      <div className="cabecalho">
+        <div>🧠 MemoryTech Game</div>
+        <div className="botao-resetar" onClick={resetar}>
+          Resetar
+        </div>
+        {/* <div className="cabecalho-item">Tentativas: {tentativas}</div> */}
+      </div>
       <div className="carta-grid">
         {baralho.map((carta) => {
           return (

@@ -112,3 +112,8 @@
     padding: 0.2rem 2rem;
   }
 }
+@media screen and (min-width: 1536px) and (orientation: landscape) {
+  .carta-externa-fixo {
+    padding: 0.2rem 3rem;
+  }
+}

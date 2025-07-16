@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/",
   plugins: [react()],
   test: {
     environment: "jsdom",
@@ -10,7 +11,7 @@ export default defineConfig({
     setupFiles: "./vitest.setup.js",
   },
   server: {
-    host: "0.0.0.0", // **Adicione esta linha**
-    port: 5173, // Opcional: Especifique a porta, se não, usará a padrão (5173)
+    host: "0.0.0.0",
+    port: 5173,
   },
 });

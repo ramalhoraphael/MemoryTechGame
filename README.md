@@ -11,7 +11,7 @@ https://memory-tech-game.vercel.app/
 Olá! Bem-vindo(a) ao **Memory Tech Game**, meu primeiro projeto pessoal. Está precisando espairecer ou distrair a mente por alguns minutos?  
 Este game usa **emojis de tecnologia** de forma divertida. Ao jogar, tente interpretar cada emoji e o que ele representa no mundo Tech.
 
-![Demonstração](./demo.gif)
+![Demonstração](./assets/demo.gif)
 
 ---
 

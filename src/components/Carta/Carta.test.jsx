@@ -11,7 +11,7 @@ describe("Componente Carta", () => {
     render(<Carta naipe="💻" virada={false} aoClicar={() => {}} />);
     expect(screen.getByText("❓")).toBeInTheDocument();
   });
-  it("deve dispara ao clicar na carta", () => {
+  it("deve disparar ao clicar na carta", () => {
     const funcaoMocada = vi.fn(); //funcao falsa (mockada)
     render(<Carta naipe="💻" virada={true} aoClicar={funcaoMocada} />);
     screen.getByText("💻").click(); //simula click na carta

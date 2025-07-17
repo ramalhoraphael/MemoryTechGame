@@ -15,15 +15,9 @@ Este game usa **emojis de tecnologia** de forma divertida. Ao jogar, tente inter
 
 ---
 
-## 🎯 Objetivo
+## 🎯 Objetivo, Tecnologias e Ferramentas
 
-O **Memory Tech Game** tem o intuito de proporcionar uma **descontração rápida** através de um jogo de memória com temática de tecnologia, usando emojis como cartas ilustrativas.
-
----
-
-## 🚀 Motivação, Tecnologias e Ferramentas
-
-Esse projeto tem como objetivo simular uma rotina próxima do ambiente corporativo, praticando:
+O objetivo do projeto é simular uma rotina próxima do ambiente corporativo, praticando:
 
 - Versionamento de código com **Git/GitHub**
 - Documentação com arquivos `README.md` e auxiliares
@@ -51,13 +45,10 @@ Esse projeto tem como objetivo simular uma rotina próxima do ambiente corporati
 - **Reinício do jogo com novo embaralhamento**  
   Um botão de "Reiniciar" reseta o jogo, embaralha novamente as cartas e limpa o estado atual.
 
-- **Detecção de fim de jogo**  
-  O jogo identifica quando todos os pares foram encontrados. Uma **mensagem de vitória** temporária é exibida (modal planejado para próxima versão).
-
 - **Responsividade mobile implementada**  
   Layout adaptado para diferentes tamanhos de tela, garantindo boa experiência em smartphones e tablets.
 
-- **Testes unitários com Vitest**  
+- **Testes de unidade com Vitest**  
   Foram criados testes para:
   - `Carta.jsx`: renderização e comportamento.
   - `Mesa.jsx`: fluxo completo de jogo (cliques, pares, bloqueios).
@@ -67,12 +58,18 @@ Esse projeto tem como objetivo simular uma rotina próxima do ambiente corporati
 
 ## 🧩 Próximos passos / Melhorias planejadas
 
+#### Melhorias de UX
 - Adição de **timer** e **contador de jogadas**
+- Modo inicio com cartas abertas por um tempo para memorização
+- **Modo Player 1 vs Player 2**
 - **Escolha de tema** ou nível de dificuldade
 - Modo com **limite de tempo ou tentativas**
 - Incrementar **acessibilidade** (`aria-label`, navegação por teclado)
 - Implementação do **modal de vitória**
-- **Modo Player 1 vs Player 2**
-- Instruções sobre **como rodar o projeto localmente**
+
+#### Melhorias de UI, Escalabilidade e Manutenção
+- Separar melhor as responsabilidades do componente Mesa até conseguir se enquadrar no Princípio da Responsabilidade Única SRP
+- Usar algum padrão para interface como shadcn/ui
+
 
 ---

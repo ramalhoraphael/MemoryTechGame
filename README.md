@@ -9,7 +9,7 @@ https://memory-tech-game.vercel.app/
 ## 👋 Boas-vindas
 
 Olá! Bem-vindo(a) ao **Memory Tech Game**, meu primeiro projeto pessoal. Está precisando espairecer ou distrair a mente por alguns minutos?  
-Este game usa **emojis de tecnologia** de forma divertida. Ao jogar, tente interpretar cada emoji e o que ele representa no mundo Tech.
+Este game usa **emojis de tecnologia** de forma divertida. Ao jogar, tente interpretar o que cada emoji representa no mundo Tech.
 
 ![Demonstração](./assets/demo.gif)
 
@@ -19,10 +19,12 @@ Este game usa **emojis de tecnologia** de forma divertida. Ao jogar, tente inter
 
 O objetivo do projeto é simular uma rotina próxima do ambiente corporativo, praticando:
 
+
 - Versionamento de código com **Git/GitHub**
-- Documentação com arquivos `README.md` e auxiliares
-- Componentização em **React**
 - Testes com **Vitest**
+- Uso de JavaScript para toda a lógica de controle
+- Componentização em **React**
+- Documentação com arquivos `README.md` e auxiliares
 - Organização e entregas com sprints ao estilo **Scrum**
 - Refatorações constantes para aprendizado de novas tecnologias
 
